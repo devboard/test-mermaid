@@ -10,3 +10,7 @@ test:
     #- sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
     - php -d 'xdebug.max_nesting_level=500' bin/phpunit --exclude-group GithubIntegration
     #- sed -i 's/^/;/' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
+deployment:
+  release:
+    tag: /tag-.*/
+    owner: circleci
