@@ -1,0 +1,12 @@
+machine:
+  php:
+    version: 5.6.5
+dependencies:
+  cache_directories:
+    - "vendor"
+    - "bin"
+test:
+  override:
+    #- sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
+    - php -d 'xdebug.max_nesting_level=500' bin/phpunit --exclude-group GithubIntegration
+    #- sed -i 's/^/;/' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
